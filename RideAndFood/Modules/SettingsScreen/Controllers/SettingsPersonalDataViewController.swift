@@ -40,7 +40,6 @@ class SettingsPersonalDataViewController: UIViewController {
                                       value: "termsOfUseLink2://",
                                       range: (attributedString.string as NSString).range(of: PersonalDataStrings.termsOfUseLink2.text()))
         
-        textView.isSelectable = false
         textView.isScrollEnabled = false
         textView.isEditable = false
         textView.linkTextAttributes = [.foregroundColor: ColorHelper.primary.color() as Any]

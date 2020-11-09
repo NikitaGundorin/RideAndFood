@@ -18,13 +18,21 @@ class SettingsPersonalDataViewModel {
     
     func fetchItems() {
         ServerApi.shared.getProfile { [weak self] profile, _ in
-            guard let profile = profile,
+            guard var profile = profile,
                   let self = self else { return }
             
             self.profile = profile
             
             let isNameEmpty = profile.name == nil || profile.name!.isEmpty
             let isEmailEmpty = profile.email == nil || profile.email!.isEmpty
+            
+            if var phone = profile.phone {
+                phone.insert(contentsOf: "-", at: phone.startIndex(offsetBy: +9))
+                phone.insert(contentsOf: "-", at: phone.startIndex(offsetBy: +7))
+                phone.insert(contentsOf: ") ", at: phone.startIndex(offsetBy: +4))
+                phone.insert(contentsOf: " (", at: phone.startIndex(offsetBy: +1))
+                profile.phone = phone
+            }
             
             self.items.onNext([
                 SectionModel(model: "", items: [
