@@ -115,6 +115,12 @@
 		FAACAA93254B02CC005C3084 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAACAA92254B02CC005C3084 /* UIImage.swift */; };
 		FAACAA9D254B0973005C3084 /* PromotionDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAACAA9C254B0973005C3084 /* PromotionDetailsViewController.swift */; };
 		FAACAAA0254B0C13005C3084 /* PromotionDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAACAA9F254B0C13005C3084 /* PromotionDetailsViewModel.swift */; };
+		FAB78CC025595B7400A9A72F /* AddressesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB78CBF25595B7400A9A72F /* AddressesViewController.swift */; };
+		FAB78CC425595ECE00A9A72F /* AddressesStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB78CC325595ECE00A9A72F /* AddressesStrings.swift */; };
+		FAB78CC72559623A00A9A72F /* AddAddresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB78CC62559623A00A9A72F /* AddAddresViewController.swift */; };
+		FAB78CCA2559756700A9A72F /* DeliveryAddressTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB78CC92559756700A9A72F /* DeliveryAddressTitleView.swift */; };
+		FAB78CCD2559764200A9A72F /* AddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB78CCC2559764200A9A72F /* AddressView.swift */; };
+		FAB78CD02559768C00A9A72F /* DeliveryAddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB78CCF2559768C00A9A72F /* DeliveryAddressView.swift */; };
 		FAC0660825553FFB003CC6AA /* PaymentStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC0660725553FFB003CC6AA /* PaymentStrings.swift */; };
 		FAC0660D2555607C003CC6AA /* BindCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC0660C2555607C003CC6AA /* BindCardViewController.swift */; };
 		FAC0661025556592003CC6AA /* BindCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC0660F25556592003CC6AA /* BindCardView.swift */; };
@@ -239,6 +245,12 @@
 		FAACAA92254B02CC005C3084 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		FAACAA9C254B0973005C3084 /* PromotionDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionDetailsViewController.swift; sourceTree = "<group>"; };
 		FAACAA9F254B0C13005C3084 /* PromotionDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionDetailsViewModel.swift; sourceTree = "<group>"; };
+		FAB78CBF25595B7400A9A72F /* AddressesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressesViewController.swift; sourceTree = "<group>"; };
+		FAB78CC325595ECE00A9A72F /* AddressesStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressesStrings.swift; sourceTree = "<group>"; };
+		FAB78CC62559623A00A9A72F /* AddAddresViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAddresViewController.swift; sourceTree = "<group>"; };
+		FAB78CC92559756700A9A72F /* DeliveryAddressTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryAddressTitleView.swift; sourceTree = "<group>"; };
+		FAB78CCC2559764200A9A72F /* AddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressView.swift; sourceTree = "<group>"; };
+		FAB78CCF2559768C00A9A72F /* DeliveryAddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryAddressView.swift; sourceTree = "<group>"; };
 		FAC0660725553FFB003CC6AA /* PaymentStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentStrings.swift; sourceTree = "<group>"; };
 		FAC0660C2555607C003CC6AA /* BindCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindCardViewController.swift; sourceTree = "<group>"; };
 		FAC0660F25556592003CC6AA /* BindCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindCardView.swift; sourceTree = "<group>"; };
@@ -358,6 +370,7 @@
 			isa = PBXGroup;
 			children = (
 				72FF3ACB253F46D60042B2A0 /* Common */,
+				FAB78CBA25595A8000A9A72F /* AddressesScreen */,
 				72D60EF22548B35900052305 /* SettingsScreen */,
 				FAA9494B25546F1B005C5B40 /* PaymentScreen */,
 				7240BF27253E167C00C00BB9 /* LoginScreen */,
@@ -612,6 +625,7 @@
 				FA2C80C6254AF91F00F82637 /* PersonalDataStrings.swift */,
 				FA3FD467254D84BE00769610 /* SideMenuStrings.swift */,
 				FAC0660725553FFB003CC6AA /* PaymentStrings.swift */,
+				FAB78CC325595ECE00A9A72F /* AddressesStrings.swift */,
 			);
 			path = StringsHelpers;
 			sourceTree = "<group>";
@@ -721,6 +735,50 @@
 				FAA9495925546F9F005C5B40 /* PaymentCard.swift */,
 				FAA9495C25546FA8005C5B40 /* PaymentCardDetails.swift */,
 				FA6100AB255715C700ED0CD5 /* PaymentType.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FAB78CBA25595A8000A9A72F /* AddressesScreen */ = {
+			isa = PBXGroup;
+			children = (
+				FAB78CBD25595AB000A9A72F /* Controllers */,
+				FAB78CBC25595AAC00A9A72F /* ViewModels */,
+				FAB78CBB25595AA900A9A72F /* Views */,
+				FAB78CBE25595ABC00A9A72F /* Models */,
+			);
+			path = AddressesScreen;
+			sourceTree = "<group>";
+		};
+		FAB78CBB25595AA900A9A72F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FAB78CC92559756700A9A72F /* DeliveryAddressTitleView.swift */,
+				FAB78CCC2559764200A9A72F /* AddressView.swift */,
+				FAB78CCF2559768C00A9A72F /* DeliveryAddressView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FAB78CBC25595AAC00A9A72F /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		FAB78CBD25595AB000A9A72F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FAB78CBF25595B7400A9A72F /* AddressesViewController.swift */,
+				FAB78CC62559623A00A9A72F /* AddAddresViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		FAB78CBE25595ABC00A9A72F /* Models */ = {
+			isa = PBXGroup;
+			children = (
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -871,6 +929,8 @@
 				72F79E0125474DC900F4E6AC /* BaseUserDefaultsManager.swift in Sources */,
 				FA050B6C2549A72E00CF363D /* AlertHelper.swift in Sources */,
 				FA983C2F2555DA9C006EE969 /* PaymentPointsViewController.swift in Sources */,
+				FAB78CCA2559756700A9A72F /* DeliveryAddressTitleView.swift in Sources */,
+				FAB78CC025595B7400A9A72F /* AddressesViewController.swift in Sources */,
 				FAACAA9D254B0973005C3084 /* PromotionDetailsViewController.swift in Sources */,
 				723DE27F2548A8F200E39743 /* LoginViewController.swift in Sources */,
 				FAC066192555717B003CC6AA /* BindCardViewModel.swift in Sources */,
@@ -892,7 +952,9 @@
 				7286E5282542E79D0027A69B /* TermsOfUseStrings.swift in Sources */,
 				FAC0661C255585AB003CC6AA /* ConfirmBindCardView.swift in Sources */,
 				FA2C80C7254AF91F00F82637 /* PersonalDataStrings.swift in Sources */,
+				FAB78CC72559623A00A9A72F /* AddAddresViewController.swift in Sources */,
 				FA050B7F2549AA9200CF363D /* AppDelegate.swift in Sources */,
+				FAB78CCD2559764200A9A72F /* AddressView.swift in Sources */,
 				FA983C2B2555D5B5006EE969 /* PaymentCongratulationsView.swift in Sources */,
 				FA8196AE2556A4D50053EE22 /* PaymentPointsView.swift in Sources */,
 				7286E5122542398F0027A69B /* FontsHelper.swift in Sources */,
@@ -923,6 +985,8 @@
 				FA2C80C0254AF8A000F82637 /* SettingsStrings.swift in Sources */,
 				F77DE255254A192C001338D8 /* BaseCustomUIComponents.swift in Sources */,
 				F795DF3325547A50005A607C /* TariffPage.swift in Sources */,
+				FAB78CC425595ECE00A9A72F /* AddressesStrings.swift in Sources */,
+				FAB78CD02559768C00A9A72F /* DeliveryAddressView.swift in Sources */,
 				FA561B4C254F0D8E00BD549E /* SideMenuView.swift in Sources */,
 				72A1DBEF2545BFCD005A047A /* Language.swift in Sources */,
 				FA3FD468254D84BE00769610 /* SideMenuStrings.swift in Sources */,
