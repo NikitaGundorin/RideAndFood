@@ -79,7 +79,6 @@
 		FA2C80BA254AED1200F82637 /* Promotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2C80B9254AED1200F82637 /* Promotion.swift */; };
 		FA2C80C0254AF8A000F82637 /* SettingsStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2C80BF254AF8A000F82637 /* SettingsStrings.swift */; };
 		FA2C80C4254AF8BD00F82637 /* PromotionsStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2C80C3254AF8BD00F82637 /* PromotionsStrings.swift */; };
-		FA2C80C7254AF91F00F82637 /* PersonalDataStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2C80C6254AF91F00F82637 /* PersonalDataStrings.swift */; };
 		FA2C80CA254AF96E00F82637 /* PromotionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2C80C9254AF96E00F82637 /* PromotionsViewModel.swift */; };
 		FA2C80CD254AFA4200F82637 /* PromotionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2C80CC254AFA4200F82637 /* PromotionCollectionViewCell.swift */; };
 		FA3A0565254809A000C55447 /* SettingsAvailableSharesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A0564254809A000C55447 /* SettingsAvailableSharesViewController.swift */; };
@@ -209,7 +208,6 @@
 		FA2C80B9254AED1200F82637 /* Promotion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Promotion.swift; sourceTree = "<group>"; };
 		FA2C80BF254AF8A000F82637 /* SettingsStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStrings.swift; sourceTree = "<group>"; };
 		FA2C80C3254AF8BD00F82637 /* PromotionsStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionsStrings.swift; sourceTree = "<group>"; };
-		FA2C80C6254AF91F00F82637 /* PersonalDataStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalDataStrings.swift; sourceTree = "<group>"; };
 		FA2C80C9254AF96E00F82637 /* PromotionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionsViewModel.swift; sourceTree = "<group>"; };
 		FA2C80CC254AFA4200F82637 /* PromotionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionCollectionViewCell.swift; sourceTree = "<group>"; };
 		FA3A0564254809A000C55447 /* SettingsAvailableSharesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsAvailableSharesViewController.swift; sourceTree = "<group>"; };
@@ -622,7 +620,6 @@
 			children = (
 				FA2C80BF254AF8A000F82637 /* SettingsStrings.swift */,
 				FA2C80C3254AF8BD00F82637 /* PromotionsStrings.swift */,
-				FA2C80C6254AF91F00F82637 /* PersonalDataStrings.swift */,
 				FA3FD467254D84BE00769610 /* SideMenuStrings.swift */,
 				FAC0660725553FFB003CC6AA /* PaymentStrings.swift */,
 				FAB78CC325595ECE00A9A72F /* AddressesStrings.swift */,
@@ -951,7 +948,6 @@
 				FAC0661325556B16003CC6AA /* MaskTextField.swift in Sources */,
 				7286E5282542E79D0027A69B /* TermsOfUseStrings.swift in Sources */,
 				FAC0661C255585AB003CC6AA /* ConfirmBindCardView.swift in Sources */,
-				FA2C80C7254AF91F00F82637 /* PersonalDataStrings.swift in Sources */,
 				FAB78CC72559623A00A9A72F /* AddAddresViewController.swift in Sources */,
 				FA050B7F2549AA9200CF363D /* AppDelegate.swift in Sources */,
 				FAB78CCD2559764200A9A72F /* AddressView.swift in Sources */,

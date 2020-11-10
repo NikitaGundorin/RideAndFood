@@ -28,17 +28,17 @@ class SettingsPersonalDataViewController: UIViewController {
     }
     
     func setupTextView() {
-        let attributedString = NSMutableAttributedString(string: PersonalDataStrings.termsOfUse.text(),
+        let attributedString = NSMutableAttributedString(string: SettingsPersonalDataStrings.termsOfUse.text(),
                                                          attributes: [
                                                             .foregroundColor: ColorHelper.secondaryText.color() as Any,
                                                             .font: FontHelper.regular12.font() as Any])
         
         attributedString.addAttribute(.link,
                                       value: "termsOfUseLink1://",
-                                      range: (attributedString.string as NSString).range(of: PersonalDataStrings.termsOfUseLink1.text()))
+                                      range: (attributedString.string as NSString).range(of: SettingsPersonalDataStrings.termsOfUseLink1.text()))
         attributedString.addAttribute(.link,
                                       value: "termsOfUseLink2://",
-                                      range: (attributedString.string as NSString).range(of: PersonalDataStrings.termsOfUseLink2.text()))
+                                      range: (attributedString.string as NSString).range(of: SettingsPersonalDataStrings.termsOfUseLink2.text()))
         
         textView.isScrollEnabled = false
         textView.isEditable = false
