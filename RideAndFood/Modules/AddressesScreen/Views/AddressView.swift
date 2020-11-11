@@ -11,9 +11,62 @@ import Foundation
 
 class AddressView: UIView {
     
-    private lazy var addressTextField: UITextField = {
-        let textField = MaskTextField(format: "[00]", valueChangedCallback: nil)
+    var showMapButtonCallback: (() -> ())?
+    
+    private lazy var addressNameTextField: UITextField = {
+        let textField = MaskTextField()
+        textField.keyboardType = .default
         textField.placeholder = AddAddressesStrings.addresName.text()
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        return textField
+    }()
+    
+    private lazy var addressIcon: UIImageView = {
+        let image = UIImage(named: "subtract", in: Bundle.init(path: "Images/Icons"), with: .none)
+        let imageView = UIImageView(image: image)
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
+    
+    private lazy var addressTextField: UITextField = {
+        let textField = MaskTextField()
+        textField.keyboardType = .default
+        textField.placeholder = AddAddressesStrings.addres.text()
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        return textField
+    }()
+    
+    private lazy var showMapButton: UIStackView = {
+        var leftLineLayer = CALayer()
+        leftLineLayer.backgroundColor = ColorHelper.disabledButton.color()?.cgColor
+        leftLineLayer.frame = CGRect(x: 5, y: -10, width: 1, height: 23)
+        
+        let leftLine = UIView()
+        leftLine.layer.addSublayer(leftLineLayer)
+        
+        let button = UIButton()
+        button.setTitle(AddAddressesStrings.mapButton.text(), for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: 12)
+        button.setTitleColor(ColorHelper.primaryText.color(), for: .normal)
+        button.addTarget(self, action: #selector(showMapButtonPressed), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        
+        let image = UIImage(named: "rightArrow", in: Bundle.init(path: "Images/Icons"), with: .none)
+        let imageView = UIImageView(image: image)
+        imageView.frame = CGRect(x: 0, y: 5, width: 9.5, height: 7.3)
+        
+        let stackView = UIStackView(arrangedSubviews: [leftLine, button, imageView])
+        stackView.distribution = .equalCentering
+        stackView.alignment = .center
+        stackView.axis = .horizontal
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
+    }()
+    
+    private lazy var commentForDriverTextField: UITextField = {
+        let textField = MaskTextField()
+        textField.keyboardType = .default
+        textField.placeholder = AddAddressesStrings.commentForDriver.text()
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
@@ -35,12 +88,36 @@ class AddressView: UIView {
     func setupLayout() {
         backgroundColor = ColorHelper.background.color()
         
+        addSubview(addressNameTextField)
+        addSubview(addressIcon)
         addSubview(addressTextField)
+        addSubview(showMapButton)
+        addSubview(commentForDriverTextField)
         
         NSLayoutConstraint.activate([
-            addressTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding),
+            addressNameTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding),
+            addressNameTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -padding),
+            addressNameTextField.topAnchor.constraint(equalTo: topAnchor),
+            
+            addressIcon.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding),
+            addressIcon.topAnchor.constraint(equalTo: addressNameTextField.bottomAnchor, constant: padding),
+            
+            addressTextField.leadingAnchor.constraint(equalTo: addressIcon.leadingAnchor, constant: padding),
             addressTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -padding),
-            addressTextField.topAnchor.constraint(equalTo: topAnchor, constant: 100)
+            addressTextField.topAnchor.constraint(equalTo: addressNameTextField.bottomAnchor, constant: padding),
+            
+            showMapButton.widthAnchor.constraint(equalToConstant: 60),
+            showMapButton.heightAnchor.constraint(equalToConstant: 23),
+            showMapButton.topAnchor.constraint(equalTo: addressTextField.topAnchor, constant: -5),
+            showMapButton.rightAnchor.constraint(equalTo: addressTextField.rightAnchor),
+            
+            commentForDriverTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding),
+            commentForDriverTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -padding),
+            commentForDriverTextField.topAnchor.constraint(equalTo: addressTextField.bottomAnchor, constant: padding)
         ])
+    }
+    
+    @objc private func showMapButtonPressed() {
+        showMapButtonCallback?()
     }
 }

@@ -11,6 +11,46 @@ import Foundation
 
 class DeliveryAddressView: UIView {
     
+    private lazy var apartmentTextField: UITextField = {
+        let textField = MaskTextField()
+        textField.keyboardType = .default
+        textField.placeholder = AddAddressesStrings.apartment.text()
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        return textField
+    }()
+    
+    private lazy var doorphoneTextField: UITextField = {
+        let textField = MaskTextField()
+        textField.keyboardType = .default
+        textField.placeholder = AddAddressesStrings.doorphone.text()
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        return textField
+    }()
+    
+    private lazy var entranceTextField: UITextField = {
+        let textField = MaskTextField()
+        textField.keyboardType = .default
+        textField.placeholder = AddAddressesStrings.entrance.text()
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        return textField
+    }()
+    
+    private lazy var floorTextField: UITextField = {
+        let textField = MaskTextField()
+        textField.keyboardType = .default
+        textField.placeholder = AddAddressesStrings.floor.text()
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        return textField
+    }()
+    
+    private lazy var commentForCourierTextField: UITextField = {
+        let textField = MaskTextField()
+        textField.keyboardType = .default
+        textField.placeholder = AddAddressesStrings.commentForCourier.text()
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        return textField
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -28,10 +68,32 @@ class DeliveryAddressView: UIView {
     func setupLayout() {
         backgroundColor = ColorHelper.background.color()
         
-        
+        addSubview(apartmentTextField)
+        addSubview(doorphoneTextField)
+        addSubview(entranceTextField)
+        addSubview(floorTextField)
+        addSubview(commentForCourierTextField)
         
         NSLayoutConstraint.activate([
+            apartmentTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding),
+            apartmentTextField.topAnchor.constraint(equalTo: topAnchor, constant: padding),
+            apartmentTextField.widthAnchor.constraint(equalToConstant: 170),
             
+            doorphoneTextField.leadingAnchor.constraint(equalTo: apartmentTextField.trailingAnchor, constant: padding),
+            doorphoneTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -padding),
+            doorphoneTextField.topAnchor.constraint(equalTo: topAnchor, constant: padding),
+            
+            entranceTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding),
+            entranceTextField.topAnchor.constraint(equalTo: apartmentTextField.bottomAnchor, constant: padding),
+            entranceTextField.widthAnchor.constraint(equalToConstant: 170),
+            
+            floorTextField.leadingAnchor.constraint(equalTo: entranceTextField.trailingAnchor, constant: padding),
+            floorTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -padding),
+            floorTextField.topAnchor.constraint(equalTo: doorphoneTextField.bottomAnchor, constant: padding),
+            
+            commentForCourierTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding),
+            commentForCourierTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -padding),
+            commentForCourierTextField.topAnchor.constraint(equalTo: entranceTextField.bottomAnchor, constant: padding),
         ])
     }
 }

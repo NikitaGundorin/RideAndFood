@@ -39,7 +39,6 @@ class DeliveryAddressTitleView: UIView {
         addSubview(titleLabel)
         
         NSLayoutConstraint.activate([
-            heightAnchor.constraint(equalToConstant: 45),
             titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding),
             titleLabel.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
