@@ -31,6 +31,20 @@ class AddAddresViewController: UIViewController {
         return view
     }()
     
+    private lazy var backgroundAlertView: UIView = {
+        let view = UIView()
+        
+        let swipe = UISwipeGestureRecognizer(target: self, action: #selector(backgroundSwipe))
+        swipe.direction = .down
+        view.addGestureRecognizer(swipe)
+        
+        view.backgroundColor = .black
+        view.alpha = 0
+        view.isHidden = true
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     private lazy var addressView: AddressView = {
         let view = AddressView()
         view.showMapButtonCallback = { [weak self] in
@@ -122,6 +136,14 @@ class AddAddresViewController: UIViewController {
         saveAddressButtonPressed()
     }
     
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesEnded(touches, with: event)
+        
+        if touches.first?.view == backgroundAlertView {
+            toggleRemoveAddressView(true)
+        }
+    }
+    
     var address: Address?
     
     private let padding: CGFloat = 20
@@ -136,6 +158,7 @@ class AddAddresViewController: UIViewController {
         scrollView.addSubview(chooseDestinationButton)
         scrollView.addSubview(removeButton)
         view.addSubview(scrollView)
+        view.addSubview(backgroundAlertView)
         view.addSubview(removeAddressView)
         
         NSLayoutConstraint.activate([
@@ -148,6 +171,11 @@ class AddAddresViewController: UIViewController {
             removeAddressView.leftAnchor.constraint(equalTo: view.leftAnchor),
             removeAddressView.rightAnchor.constraint(equalTo: view.rightAnchor),
             removeAddressView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            
+            backgroundAlertView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            backgroundAlertView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            backgroundAlertView.topAnchor.constraint(equalTo: view.topAnchor),
+            backgroundAlertView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             
             backgroundView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             backgroundView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
@@ -204,10 +232,14 @@ class AddAddresViewController: UIViewController {
             removeAddressViewHeightConstraint.constant = 200
         }
         
+        backgroundAlertView.isHidden = hide
+        navigationController?.setNavigationBarHidden(!hide, animated: true)
+        
         UIView.animate(
             withDuration: ConstantsHelper.baseAnimationDuration.value(),
             delay: 0,
             options: animateOption, animations: { [weak self] in
+                self?.backgroundAlertView.alpha = hide ? 0 : 0.3
                 self?.view.layoutIfNeeded()
             })
     }
@@ -241,7 +273,9 @@ class AddAddresViewController: UIViewController {
             return
         }
         
-        saveButton.isEnabled = false
+        DispatchQueue.main.async {
+            self.saveButton.isEnabled = false
+        }
         
         if let address = self.address {
             let updatedAddress = Address(id: address.id, name: addressInputs.0, address: addressInputs.1, commentDriver: addressInputs.2, commentCourier: deliveryAddressInputs.4, flat: deliveryAddressInputs.0, intercom: deliveryAddressInputs.1, entrance: deliveryAddressInputs.2, floor: deliveryAddressInputs.3, destination: address.destination)
@@ -254,7 +288,9 @@ class AddAddresViewController: UIViewController {
                         self.navigationController?.popViewController(animated: true)
                     }
                 } else {
-                    self.saveButton.isEnabled = true
+                    DispatchQueue.main.async {
+                        self.saveButton.isEnabled = true
+                    }
                     AlertHelper.shared.alert(self, title: StringsHelper.alertErrorTitle.text(), message: StringsHelper.alertErrorDescription.text())
                 }
             })
@@ -279,12 +315,29 @@ class AddAddresViewController: UIViewController {
     @objc private func removeAddressButtonPressed() {
         toggleRemoveAddressView(false)
     }
+    
+    @objc private func backgroundSwipe() {
+        toggleRemoveAddressView(true)
+    }
 }
 
 extension AddAddresViewController: RemoveAddressDelegate {
     
     func remove() {
-        
+        if let address = address {
+            ServerApi.shared.deleteAddress(address, completion: { [weak self] _, error in
+                guard let self = self else { return }
+                
+                if error == nil {
+                    DispatchQueue.main.async {
+                        self.toggleRemoveAddressView(true)
+                        self.navigationController?.popViewController(animated: true)
+                    }
+                } else {
+                    AlertHelper.shared.alert(self, title: StringsHelper.alertErrorTitle.text(), message: StringsHelper.alertErrorDescription.text())
+                }
+            })
+        }
     }
     
     func cencel() {

@@ -100,7 +100,7 @@ class AddressesViewController: UIViewController {
             
             addAddressButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),
             addAddressButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
-            addAddressButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -padding),
+            addAddressButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -padding-10),
         ])
     }
     
