@@ -42,9 +42,21 @@ class AddressesViewController: UIViewController {
         return button
     }()
     
+    private lazy var tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.tableFooterView = UIView()
+        tableView.isHidden = true
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        return tableView
+    }()
+    
     private let padding: CGFloat = 20
+    private let cellIdentifier = "AddressCell"
+    
+    private lazy var backgroundImageYAnchorConstraint = backgroundImage.centerYAnchor.constraint(equalTo: view.centerYAnchor)
     
     private let bag = DisposeBag()
+    private let viewModel = AddressViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,11 +64,21 @@ class AddressesViewController: UIViewController {
         navigationItem.backButtonTitle = " "
         navigationController?.navigationBar.tintColor = .gray
         setupLayout()
+        setupTableView()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        viewModel.fetchItems { [weak self] in
+            self?.showAddressesTable()
+        }
     }
     
     func setupLayout() {
         view.addSubview(backgroundView)
         view.addSubview(backgroundImage)
+        view.addSubview(tableView)
         view.addSubview(alertLabel)
         view.addSubview(addAddressButton)
         
@@ -66,7 +88,12 @@ class AddressesViewController: UIViewController {
             backgroundView.topAnchor.constraint(equalTo: view.topAnchor),
             backgroundView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             
-            backgroundImage.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            backgroundImageYAnchorConstraint,
+            
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            tableView.topAnchor.constraint(equalTo: view.topAnchor),
+            tableView.bottomAnchor.constraint(equalTo: backgroundImage.topAnchor, constant: -padding),
             
             alertLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             alertLabel.topAnchor.constraint(equalTo: backgroundImage.bottomAnchor, constant: 30),
@@ -75,6 +102,34 @@ class AddressesViewController: UIViewController {
             addAddressButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
             addAddressButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -padding),
         ])
+    }
+    
+    func setupTableView() {
+        tableView.register(AddressTableViewCell.self, forCellReuseIdentifier: cellIdentifier)
+        
+        tableView.rx
+            .modelSelected(Address.self)
+            .subscribe(onNext: { [weak self] address in
+                let vc = AddAddresViewController()
+                vc.address = address
+                self?.navigationController?.pushViewController(vc, animated: true)
+            }).disposed(by: bag)
+        
+        viewModel.addressesPublishSubject
+            .bind(to: tableView.rx.items(dataSource: viewModel.dataSource(cellIdentifier: cellIdentifier)))
+            .disposed(by: bag)
+    }
+    
+    func showAddressesTable() {
+        if tableView.isHidden {
+            
+            let image = UIImage(named: "background2", in: Bundle.init(path: "Images/Addresses"), with: .none)
+            backgroundImage.image = image
+            
+            alertLabel.isHidden = true
+            tableView.isHidden = false
+            backgroundImageYAnchorConstraint.constant = 110
+        }
     }
     
     @objc private func showAddAddresController() {

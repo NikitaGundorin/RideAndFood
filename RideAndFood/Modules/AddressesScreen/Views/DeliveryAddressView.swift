@@ -11,7 +11,7 @@ import Foundation
 
 class DeliveryAddressView: UIView {
     
-    private lazy var apartmentTextField: UITextField = {
+    lazy var apartmentTextField: UITextField = {
         let textField = MaskTextField()
         textField.keyboardType = .default
         textField.placeholder = AddAddressesStrings.apartment.text()
@@ -19,7 +19,7 @@ class DeliveryAddressView: UIView {
         return textField
     }()
     
-    private lazy var doorphoneTextField: UITextField = {
+    lazy var doorphoneTextField: UITextField = {
         let textField = MaskTextField()
         textField.keyboardType = .default
         textField.placeholder = AddAddressesStrings.doorphone.text()
@@ -27,7 +27,7 @@ class DeliveryAddressView: UIView {
         return textField
     }()
     
-    private lazy var entranceTextField: UITextField = {
+    lazy var entranceTextField: UITextField = {
         let textField = MaskTextField()
         textField.keyboardType = .default
         textField.placeholder = AddAddressesStrings.entrance.text()
@@ -35,7 +35,7 @@ class DeliveryAddressView: UIView {
         return textField
     }()
     
-    private lazy var floorTextField: UITextField = {
+    lazy var floorTextField: UITextField = {
         let textField = MaskTextField()
         textField.keyboardType = .default
         textField.placeholder = AddAddressesStrings.floor.text()
@@ -43,7 +43,7 @@ class DeliveryAddressView: UIView {
         return textField
     }()
     
-    private lazy var commentForCourierTextField: UITextField = {
+    lazy var commentForCourierTextField: UITextField = {
         let textField = MaskTextField()
         textField.keyboardType = .default
         textField.placeholder = AddAddressesStrings.commentForCourier.text()
@@ -95,5 +95,9 @@ class DeliveryAddressView: UIView {
             commentForCourierTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -padding),
             commentForCourierTextField.topAnchor.constraint(equalTo: entranceTextField.bottomAnchor, constant: padding),
         ])
+    }
+    
+    func getUserInputs() -> (Int, Int, Int, Int, String) {
+        return (Int(apartmentTextField.text ?? "") ?? 0, Int(doorphoneTextField.text ?? "") ?? 0, Int(entranceTextField.text ?? "") ?? 0, Int(floorTextField.text ?? "") ?? 0, commentForCourierTextField.text ?? "")
     }
 }

@@ -13,7 +13,7 @@ class AddressView: UIView {
     
     var showMapButtonCallback: (() -> ())?
     
-    private lazy var addressNameTextField: UITextField = {
+    lazy var addressNameTextField: UITextField = {
         let textField = MaskTextField()
         textField.keyboardType = .default
         textField.placeholder = AddAddressesStrings.addresName.text()
@@ -28,7 +28,7 @@ class AddressView: UIView {
         return imageView
     }()
     
-    private lazy var addressTextField: UITextField = {
+    lazy var addressTextField: UITextField = {
         let textField = MaskTextField()
         textField.keyboardType = .default
         textField.placeholder = AddAddressesStrings.addres.text()
@@ -63,7 +63,7 @@ class AddressView: UIView {
         return stackView
     }()
     
-    private lazy var commentForDriverTextField: UITextField = {
+    lazy var commentForDriverTextField: UITextField = {
         let textField = MaskTextField()
         textField.keyboardType = .default
         textField.placeholder = AddAddressesStrings.commentForDriver.text()
@@ -115,6 +115,14 @@ class AddressView: UIView {
             commentForDriverTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -padding),
             commentForDriverTextField.topAnchor.constraint(equalTo: addressTextField.bottomAnchor, constant: padding)
         ])
+    }
+    
+    func setAddress(_ address: String) {
+        addressTextField.text = address
+    }
+    
+    func getUserInputs() -> (String, String, String) {
+        return (addressNameTextField.text ?? "", addressTextField.text ?? "", commentForDriverTextField.text ?? "")
     }
     
     @objc private func showMapButtonPressed() {

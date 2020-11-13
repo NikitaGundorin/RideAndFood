@@ -58,6 +58,11 @@ enum AddAddressesStrings {
     case floor
     case mapButton
     case saveButton
+    case selectAddress
+    case chooseDestination
+    case removeTitle
+    case removeButton
+    case cencelButton
     
     func text() -> String {
         switch UserConfig.shared.settings.language {
@@ -70,6 +75,8 @@ enum AddAddressesStrings {
     
     func rus() -> String {
         switch self {
+        case .selectAddress:
+            return "Выбрать адрес"
         case .title:
             return "Новый адрес"
         case .addres:
@@ -94,11 +101,21 @@ enum AddAddressesStrings {
             return "Комментарий для курьера"
         case .saveButton:
             return "Сохранить"
+        case .chooseDestination:
+            return "Выбрать местом назначения"
+        case .removeTitle:
+            return "Удалить адрес?"
+        case .removeButton:
+            return "Удалить"
+        case .cencelButton:
+            return "Отменить"
         }
     }
     
     func eng() -> String {
         switch self {
+        case .selectAddress:
+            return "Select address"
         case .title:
             return "New addres"
         case .addres:
@@ -123,6 +140,14 @@ enum AddAddressesStrings {
             return "Commentary for courier"
         case .saveButton:
             return "Save"
+        case .chooseDestination:
+            return "Choose destination"
+        case .removeTitle:
+            return "Remove address?"
+        case .removeButton:
+            return "Remove"
+        case .cencelButton:
+            return "Cencel"
         }
     }
 }

@@ -36,7 +36,7 @@ class SideMenuViewModel {
                 title: SideMenuStrings.paymentMethod.text(),
                 cellTypes: [.default(), .icon(UIImage(named: "visa", in: Bundle.init(path: "Images/Icons"), with: .none))],
                 completion: { vc in
-                    let controller = AddAddresViewController()
+                    let controller = AddressesViewController()
                     var backbutton = UIButton(type: .custom)
                     backbutton.setImage(UIImage(systemName: "chevron.left"), for: .normal)
                     backbutton.tintColor = .gray
