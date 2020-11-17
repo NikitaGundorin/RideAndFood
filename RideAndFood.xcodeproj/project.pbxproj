@@ -128,6 +128,7 @@
 		FAC0661325556B16003CC6AA /* MaskTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC0661225556B16003CC6AA /* MaskTextField.swift */; };
 		FAC066192555717B003CC6AA /* BindCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC066182555717B003CC6AA /* BindCardViewModel.swift */; };
 		FAC0661C255585AB003CC6AA /* ConfirmBindCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC0661B255585AB003CC6AA /* ConfirmBindCardView.swift */; };
+		FACFAEAD256450B000B37A33 /* FoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACFAEAC256450B000B37A33 /* FoodView.swift */; };
 		FAE81CA7254815E40082A6B5 /* ServerApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE81CA6254815E40082A6B5 /* ServerApi.swift */; };
 		FAE81CAA254818D10082A6B5 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE81CA9254818D10082A6B5 /* Settings.swift */; };
 		FAE8E5EC254AB8CE000DF2F7 /* UserConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE8E5EB254AB8CE000DF2F7 /* UserConfig.swift */; };
@@ -259,6 +260,7 @@
 		FAC0661225556B16003CC6AA /* MaskTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaskTextField.swift; sourceTree = "<group>"; };
 		FAC066182555717B003CC6AA /* BindCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindCardViewModel.swift; sourceTree = "<group>"; };
 		FAC0661B255585AB003CC6AA /* ConfirmBindCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmBindCardView.swift; sourceTree = "<group>"; };
+		FACFAEAC256450B000B37A33 /* FoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodView.swift; sourceTree = "<group>"; };
 		FAE81CA6254815E40082A6B5 /* ServerApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerApi.swift; sourceTree = "<group>"; };
 		FAE81CA9254818D10082A6B5 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		FAE8E5EB254AB8CE000DF2F7 /* UserConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserConfig.swift; sourceTree = "<group>"; };
@@ -371,8 +373,9 @@
 		7286E5222542E7420027A69B /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				F7090888255B16B10047EDB6 /* Taxi */,
 				72FF3ACB253F46D60042B2A0 /* Common */,
+				F7090888255B16B10047EDB6 /* Taxi */,
+				FACFAEA32564502200B37A33 /* FoodScreen */,
 				72D60EF22548B35900052305 /* SettingsScreen */,
 				FAA9494B25546F1B005C5B40 /* PaymentScreen */,
 				7240BF27253E167C00C00BB9 /* LoginScreen */,
@@ -754,6 +757,46 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		FACFAEA32564502200B37A33 /* FoodScreen */ = {
+			isa = PBXGroup;
+			children = (
+				FACFAEA72564503800B37A33 /* Controllers */,
+				FACFAEA62564503500B37A33 /* ViewModels */,
+				FACFAEA52564503400B37A33 /* Views */,
+				FACFAEA42564503100B37A33 /* Models */,
+			);
+			path = FoodScreen;
+			sourceTree = "<group>";
+		};
+		FACFAEA42564503100B37A33 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FACFAEA52564503400B37A33 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FACFAEAC256450B000B37A33 /* FoodView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FACFAEA62564503500B37A33 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		FACFAEA72564503800B37A33 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		FAE81CA1254814AC0082A6B5 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
@@ -898,6 +941,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FACFAEAD256450B000B37A33 /* FoodView.swift in Sources */,
 				F7805C402552EFBE00D1BBAD /* TariffStrings.swift in Sources */,
 				72F79E0125474DC900F4E6AC /* BaseUserDefaultsManager.swift in Sources */,
 				FA050B6C2549A72E00CF363D /* AlertHelper.swift in Sources */,

@@ -40,6 +40,7 @@ class MapViewController: UIViewController {
         let view = MapCardView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.taxiAction = taxiButtonPressed
+        view.foodAction = foodButtonPressed
         return view
     }()
     
@@ -314,6 +315,20 @@ class MapViewController: UIViewController {
     
     @objc private func taxiButtonPressed() {
         initializeTaxiOrderView()
+    }
+    
+    @objc private func foodButtonPressed() {
+        let foodView = FoodView()
+        foodView.translatesAutoresizingMaskIntoConstraints = false
+        
+        view.addSubview(foodView)
+        
+        NSLayoutConstraint.activate([
+            foodView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            foodView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            foodView.topAnchor.constraint(equalTo: view.topAnchor),
+            foodView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
     }
     
     @objc private func keyboardWillShow(notification: NSNotification) {
