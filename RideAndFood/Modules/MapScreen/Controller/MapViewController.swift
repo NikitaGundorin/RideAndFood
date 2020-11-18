@@ -92,7 +92,7 @@ class MapViewController: UIViewController {
         return view
     }()
     
-    private var taxiOrderView: TaxiOrderView? = nil
+    private var taxiOrderView: TaxiOrderView? = TaxiOrderView()
     
     // MARK: - Private properties
     
