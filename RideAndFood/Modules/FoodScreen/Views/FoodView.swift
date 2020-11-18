@@ -21,7 +21,7 @@ class FoodView: UIView {
     }()
     
     private lazy var foodView: UIView = {
-        let view = UIView()
+        let view = FoodSelectAddressView()
         view.backgroundColor = ColorHelper.background.color()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -76,12 +76,6 @@ class FoodView: UIView {
             foodViewTopConstraint,
             foodView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
-        
-        foodView.layer.shadowColor = ColorHelper.shadow.color()?.cgColor
-        foodView.layer.shadowOpacity = 0.2
-        foodView.layer.shadowRadius = 10
-        foodView.layer.cornerRadius = 15
-        foodView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
     }
     
     func toggle(hide: Bool) {

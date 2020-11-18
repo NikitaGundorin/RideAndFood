@@ -115,6 +115,7 @@
 		FA983C2B2555D5B5006EE969 /* PaymentCongratulationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA983C2A2555D5B5006EE969 /* PaymentCongratulationsView.swift */; };
 		FA983C2F2555DA9C006EE969 /* PaymentPointsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA983C2E2555DA9C006EE969 /* PaymentPointsViewController.swift */; };
 		FAA0B6C925496D1D0020ACE7 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA0B6C825496D1D0020ACE7 /* SettingsViewController.swift */; };
+		FAA486872565656D003E057F /* FoodSelectAddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA486862565656D003E057F /* FoodSelectAddressView.swift */; };
 		FAA9495125546F73005C5B40 /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA9495025546F73005C5B40 /* PaymentViewController.swift */; };
 		FAA9495625546F80005C5B40 /* PaymentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA9495525546F80005C5B40 /* PaymentViewModel.swift */; };
 		FAA9495A25546F9F005C5B40 /* PaymentCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA9495925546F9F005C5B40 /* PaymentCard.swift */; };
@@ -247,6 +248,7 @@
 		FA983C2A2555D5B5006EE969 /* PaymentCongratulationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentCongratulationsView.swift; sourceTree = "<group>"; };
 		FA983C2E2555DA9C006EE969 /* PaymentPointsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentPointsViewController.swift; sourceTree = "<group>"; };
 		FAA0B6C825496D1D0020ACE7 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		FAA486862565656D003E057F /* FoodSelectAddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodSelectAddressView.swift; sourceTree = "<group>"; };
 		FAA9495025546F73005C5B40 /* PaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
 		FAA9495525546F80005C5B40 /* PaymentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewModel.swift; sourceTree = "<group>"; };
 		FAA9495925546F9F005C5B40 /* PaymentCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentCard.swift; sourceTree = "<group>"; };
@@ -779,6 +781,7 @@
 			isa = PBXGroup;
 			children = (
 				FACFAEAC256450B000B37A33 /* FoodView.swift */,
+				FAA486862565656D003E057F /* FoodSelectAddressView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -970,6 +973,7 @@
 				FA2C80C7254AF91F00F82637 /* PersonalDataStrings.swift in Sources */,
 				FA050B7F2549AA9200CF363D /* AppDelegate.swift in Sources */,
 				FA983C2B2555D5B5006EE969 /* PaymentCongratulationsView.swift in Sources */,
+				FAA486872565656D003E057F /* FoodSelectAddressView.swift in Sources */,
 				FA8196AE2556A4D50053EE22 /* PaymentPointsView.swift in Sources */,
 				7286E5122542398F0027A69B /* FontsHelper.swift in Sources */,
 				FA8196B12556A7100053EE22 /* PaymentPointsDetailsView.swift in Sources */,
