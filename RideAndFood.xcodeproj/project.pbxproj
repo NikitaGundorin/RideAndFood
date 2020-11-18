@@ -86,7 +86,6 @@
 		FA2C80BA254AED1200F82637 /* Promotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2C80B9254AED1200F82637 /* Promotion.swift */; };
 		FA2C80C0254AF8A000F82637 /* SettingsStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2C80BF254AF8A000F82637 /* SettingsStrings.swift */; };
 		FA2C80C4254AF8BD00F82637 /* PromotionsStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2C80C3254AF8BD00F82637 /* PromotionsStrings.swift */; };
-		FA2C80C7254AF91F00F82637 /* PersonalDataStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2C80C6254AF91F00F82637 /* PersonalDataStrings.swift */; };
 		FA2C80CA254AF96E00F82637 /* PromotionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2C80C9254AF96E00F82637 /* PromotionsViewModel.swift */; };
 		FA2C80CD254AFA4200F82637 /* PromotionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2C80CC254AFA4200F82637 /* PromotionCollectionViewCell.swift */; };
 		FA3A0565254809A000C55447 /* SettingsAvailableSharesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A0564254809A000C55447 /* SettingsAvailableSharesViewController.swift */; };
@@ -103,6 +102,8 @@
 		FA44F2AF25459B080004A1C9 /* SettingsLanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA44F2AE25459B080004A1C9 /* SettingsLanguageViewController.swift */; };
 		FA44F2B225459B1F0004A1C9 /* SettingsLanguageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA44F2B125459B1F0004A1C9 /* SettingsLanguageViewModel.swift */; };
 		FA561B4C254F0D8E00BD549E /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA561B4B254F0D8E00BD549E /* SideMenuView.swift */; };
+		FA5977E8255C2D1B00665630 /* SelectAddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5977E7255C2D1B00665630 /* SelectAddressView.swift */; };
+		FA5977EB255C35AA00665630 /* SelectAddressMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5977EA255C35AA00665630 /* SelectAddressMapViewController.swift */; };
 		FA6100AC255715C700ED0CD5 /* PaymentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6100AB255715C700ED0CD5 /* PaymentType.swift */; };
 		FA8196AE2556A4D50053EE22 /* PaymentPointsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8196AD2556A4D50053EE22 /* PaymentPointsView.swift */; };
 		FA8196B12556A7100053EE22 /* PaymentPointsDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8196B02556A7100053EE22 /* PaymentPointsDetailsView.swift */; };
@@ -114,6 +115,7 @@
 		FA8CA7802546D531001FDE5E /* AlertTextFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8CA77F2546D531001FDE5E /* AlertTextFieldViewController.swift */; };
 		FA983C2B2555D5B5006EE969 /* PaymentCongratulationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA983C2A2555D5B5006EE969 /* PaymentCongratulationsView.swift */; };
 		FA983C2F2555DA9C006EE969 /* PaymentPointsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA983C2E2555DA9C006EE969 /* PaymentPointsViewController.swift */; };
+		FA9EBBFD255D507F009F95EA /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9EBBFC255D507F009F95EA /* Address.swift */; };
 		FAA0B6C925496D1D0020ACE7 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA0B6C825496D1D0020ACE7 /* SettingsViewController.swift */; };
 		FAA486872565656D003E057F /* FoodSelectAddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA486862565656D003E057F /* FoodSelectAddressView.swift */; };
 		FAA9495125546F73005C5B40 /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA9495025546F73005C5B40 /* PaymentViewController.swift */; };
@@ -123,6 +125,15 @@
 		FAACAA93254B02CC005C3084 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAACAA92254B02CC005C3084 /* UIImage.swift */; };
 		FAACAA9D254B0973005C3084 /* PromotionDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAACAA9C254B0973005C3084 /* PromotionDetailsViewController.swift */; };
 		FAACAAA0254B0C13005C3084 /* PromotionDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAACAA9F254B0C13005C3084 /* PromotionDetailsViewModel.swift */; };
+		FAB78CC025595B7400A9A72F /* AddressesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB78CBF25595B7400A9A72F /* AddressesViewController.swift */; };
+		FAB78CC425595ECE00A9A72F /* AddressesStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB78CC325595ECE00A9A72F /* AddressesStrings.swift */; };
+		FAB78CC72559623A00A9A72F /* AddAddresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB78CC62559623A00A9A72F /* AddAddresViewController.swift */; };
+		FAB78CCA2559756700A9A72F /* DeliveryAddressTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB78CC92559756700A9A72F /* DeliveryAddressTitleView.swift */; };
+		FAB78CCD2559764200A9A72F /* AddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB78CCC2559764200A9A72F /* AddressView.swift */; };
+		FAB78CD02559768C00A9A72F /* DeliveryAddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB78CCF2559768C00A9A72F /* DeliveryAddressView.swift */; };
+		FAB7F56E255E6CCA000AE131 /* AddressViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB7F56D255E6CCA000AE131 /* AddressViewModel.swift */; };
+		FAB7F571255E717C000AE131 /* AddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB7F570255E717C000AE131 /* AddressTableViewCell.swift */; };
+		FAB7F574255E89AB000AE131 /* RemoveAddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB7F573255E89AB000AE131 /* RemoveAddressView.swift */; };
 		FAC0660825553FFB003CC6AA /* PaymentStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC0660725553FFB003CC6AA /* PaymentStrings.swift */; };
 		FAC0660D2555607C003CC6AA /* BindCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC0660C2555607C003CC6AA /* BindCardViewController.swift */; };
 		FAC0661025556592003CC6AA /* BindCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC0660F25556592003CC6AA /* BindCardView.swift */; };
@@ -219,7 +230,6 @@
 		FA2C80B9254AED1200F82637 /* Promotion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Promotion.swift; sourceTree = "<group>"; };
 		FA2C80BF254AF8A000F82637 /* SettingsStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStrings.swift; sourceTree = "<group>"; };
 		FA2C80C3254AF8BD00F82637 /* PromotionsStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionsStrings.swift; sourceTree = "<group>"; };
-		FA2C80C6254AF91F00F82637 /* PersonalDataStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalDataStrings.swift; sourceTree = "<group>"; };
 		FA2C80C9254AF96E00F82637 /* PromotionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionsViewModel.swift; sourceTree = "<group>"; };
 		FA2C80CC254AFA4200F82637 /* PromotionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionCollectionViewCell.swift; sourceTree = "<group>"; };
 		FA3A0564254809A000C55447 /* SettingsAvailableSharesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsAvailableSharesViewController.swift; sourceTree = "<group>"; };
@@ -236,6 +246,8 @@
 		FA44F2AE25459B080004A1C9 /* SettingsLanguageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsLanguageViewController.swift; sourceTree = "<group>"; };
 		FA44F2B125459B1F0004A1C9 /* SettingsLanguageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsLanguageViewModel.swift; sourceTree = "<group>"; };
 		FA561B4B254F0D8E00BD549E /* SideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
+		FA5977E7255C2D1B00665630 /* SelectAddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAddressView.swift; sourceTree = "<group>"; };
+		FA5977EA255C35AA00665630 /* SelectAddressMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAddressMapViewController.swift; sourceTree = "<group>"; };
 		FA6100AB255715C700ED0CD5 /* PaymentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentType.swift; sourceTree = "<group>"; };
 		FA8196AD2556A4D50053EE22 /* PaymentPointsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentPointsView.swift; sourceTree = "<group>"; };
 		FA8196B02556A7100053EE22 /* PaymentPointsDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentPointsDetailsView.swift; sourceTree = "<group>"; };
@@ -247,6 +259,7 @@
 		FA8CA77F2546D531001FDE5E /* AlertTextFieldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertTextFieldViewController.swift; sourceTree = "<group>"; };
 		FA983C2A2555D5B5006EE969 /* PaymentCongratulationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentCongratulationsView.swift; sourceTree = "<group>"; };
 		FA983C2E2555DA9C006EE969 /* PaymentPointsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentPointsViewController.swift; sourceTree = "<group>"; };
+		FA9EBBFC255D507F009F95EA /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		FAA0B6C825496D1D0020ACE7 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		FAA486862565656D003E057F /* FoodSelectAddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodSelectAddressView.swift; sourceTree = "<group>"; };
 		FAA9495025546F73005C5B40 /* PaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
@@ -256,6 +269,15 @@
 		FAACAA92254B02CC005C3084 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		FAACAA9C254B0973005C3084 /* PromotionDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionDetailsViewController.swift; sourceTree = "<group>"; };
 		FAACAA9F254B0C13005C3084 /* PromotionDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionDetailsViewModel.swift; sourceTree = "<group>"; };
+		FAB78CBF25595B7400A9A72F /* AddressesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressesViewController.swift; sourceTree = "<group>"; };
+		FAB78CC325595ECE00A9A72F /* AddressesStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressesStrings.swift; sourceTree = "<group>"; };
+		FAB78CC62559623A00A9A72F /* AddAddresViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAddresViewController.swift; sourceTree = "<group>"; };
+		FAB78CC92559756700A9A72F /* DeliveryAddressTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryAddressTitleView.swift; sourceTree = "<group>"; };
+		FAB78CCC2559764200A9A72F /* AddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressView.swift; sourceTree = "<group>"; };
+		FAB78CCF2559768C00A9A72F /* DeliveryAddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryAddressView.swift; sourceTree = "<group>"; };
+		FAB7F56D255E6CCA000AE131 /* AddressViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressViewModel.swift; sourceTree = "<group>"; };
+		FAB7F570255E717C000AE131 /* AddressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressTableViewCell.swift; sourceTree = "<group>"; };
+		FAB7F573255E89AB000AE131 /* RemoveAddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveAddressView.swift; sourceTree = "<group>"; };
 		FAC0660725553FFB003CC6AA /* PaymentStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentStrings.swift; sourceTree = "<group>"; };
 		FAC0660C2555607C003CC6AA /* BindCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindCardViewController.swift; sourceTree = "<group>"; };
 		FAC0660F25556592003CC6AA /* BindCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindCardView.swift; sourceTree = "<group>"; };
@@ -347,6 +369,7 @@
 				7286E5112542398F0027A69B /* FontsHelper.swift */,
 				7286E51525423A640027A69B /* StringsHelper.swift */,
 				7286E51A2542B9CB0027A69B /* ConstantsHelper.swift */,
+				FA5977EA255C35AA00665630 /* SelectAddressMapViewController.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -378,6 +401,7 @@
 				72FF3ACB253F46D60042B2A0 /* Common */,
 				F7090888255B16B10047EDB6 /* Taxi */,
 				FACFAEA32564502200B37A33 /* FoodScreen */,
+				FAB78CBA25595A8000A9A72F /* AddressesScreen */,
 				72D60EF22548B35900052305 /* SettingsScreen */,
 				FAA9494B25546F1B005C5B40 /* PaymentScreen */,
 				7240BF27253E167C00C00BB9 /* LoginScreen */,
@@ -643,9 +667,9 @@
 			children = (
 				FA2C80BF254AF8A000F82637 /* SettingsStrings.swift */,
 				FA2C80C3254AF8BD00F82637 /* PromotionsStrings.swift */,
-				FA2C80C6254AF91F00F82637 /* PersonalDataStrings.swift */,
 				FA3FD467254D84BE00769610 /* SideMenuStrings.swift */,
 				FAC0660725553FFB003CC6AA /* PaymentStrings.swift */,
+				FAB78CC325595ECE00A9A72F /* AddressesStrings.swift */,
 			);
 			path = StringsHelpers;
 			sourceTree = "<group>";
@@ -798,6 +822,53 @@
 			children = (
 			);
 			path = Controllers;
+		FAB78CBA25595A8000A9A72F /* AddressesScreen */ = {
+			isa = PBXGroup;
+			children = (
+				FAB78CBD25595AB000A9A72F /* Controllers */,
+				FAB78CBC25595AAC00A9A72F /* ViewModels */,
+				FAB78CBB25595AA900A9A72F /* Views */,
+				FAB78CBE25595ABC00A9A72F /* Models */,
+			);
+			path = AddressesScreen;
+			sourceTree = "<group>";
+		};
+		FAB78CBB25595AA900A9A72F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FAB78CC92559756700A9A72F /* DeliveryAddressTitleView.swift */,
+				FAB78CCC2559764200A9A72F /* AddressView.swift */,
+				FAB78CCF2559768C00A9A72F /* DeliveryAddressView.swift */,
+				FA5977E7255C2D1B00665630 /* SelectAddressView.swift */,
+				FAB7F570255E717C000AE131 /* AddressTableViewCell.swift */,
+				FAB7F573255E89AB000AE131 /* RemoveAddressView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FAB78CBC25595AAC00A9A72F /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				FAB7F56D255E6CCA000AE131 /* AddressViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		FAB78CBD25595AB000A9A72F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FAB78CBF25595B7400A9A72F /* AddressesViewController.swift */,
+				FAB78CC62559623A00A9A72F /* AddAddresViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		FAB78CBE25595ABC00A9A72F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FA9EBBFC255D507F009F95EA /* Address.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		FAE81CA1254814AC0082A6B5 /* Repositories */ = {
@@ -949,15 +1020,20 @@
 				72F79E0125474DC900F4E6AC /* BaseUserDefaultsManager.swift in Sources */,
 				FA050B6C2549A72E00CF363D /* AlertHelper.swift in Sources */,
 				FA983C2F2555DA9C006EE969 /* PaymentPointsViewController.swift in Sources */,
+				FAB78CCA2559756700A9A72F /* DeliveryAddressTitleView.swift in Sources */,
+				FAB78CC025595B7400A9A72F /* AddressesViewController.swift in Sources */,
 				FAACAA9D254B0973005C3084 /* PromotionDetailsViewController.swift in Sources */,
 				723DE27F2548A8F200E39743 /* LoginViewController.swift in Sources */,
 				FAC066192555717B003CC6AA /* BindCardViewModel.swift in Sources */,
 				7286E5252542E7610027A69B /* TermsOfUseViewController.swift in Sources */,
+				FA9EBBFD255D507F009F95EA /* Address.swift in Sources */,
 				72A1DBD62545A764005A047A /* BaseNetworkManager.swift in Sources */,
 				72E30EFB254EEFF50037E4B4 /* RoundButton.swift in Sources */,
 				72A1DBE92545BF24005A047A /* CodeConfirmationModel.swift in Sources */,
+				FAB7F56E255E6CCA000AE131 /* AddressViewModel.swift in Sources */,
 				F73D1B0E25568E440001F7FC /* TariffViewController.swift in Sources */,
 				FA44960A254C01000071E76F /* PromotionDetails.swift in Sources */,
+				FAB7F574255E89AB000AE131 /* RemoveAddressView.swift in Sources */,
 				FAE8E5EF254ABA0C000DF2F7 /* ApiConfig.swift in Sources */,
 				FAC0661025556592003CC6AA /* BindCardView.swift in Sources */,
 				72A1DBE72545BF19005A047A /* CodeModel.swift in Sources */,
@@ -970,8 +1046,9 @@
 				7286E5282542E79D0027A69B /* TermsOfUseStrings.swift in Sources */,
 				F709088D255B25B40047EDB6 /* CustomTextView.swift in Sources */,
 				FAC0661C255585AB003CC6AA /* ConfirmBindCardView.swift in Sources */,
-				FA2C80C7254AF91F00F82637 /* PersonalDataStrings.swift in Sources */,
+				FAB78CC72559623A00A9A72F /* AddAddresViewController.swift in Sources */,
 				FA050B7F2549AA9200CF363D /* AppDelegate.swift in Sources */,
+				FAB78CCD2559764200A9A72F /* AddressView.swift in Sources */,
 				FA983C2B2555D5B5006EE969 /* PaymentCongratulationsView.swift in Sources */,
 				FAA486872565656D003E057F /* FoodSelectAddressView.swift in Sources */,
 				FA8196AE2556A4D50053EE22 /* PaymentPointsView.swift in Sources */,
@@ -987,6 +1064,7 @@
 				7286E5202542DEA40027A69B /* TermsOfUseTextViewDelegate.swift in Sources */,
 				7286E51425423A160027A69B /* LoginStrings.swift in Sources */,
 				7240BF17253E0E7600C00BB9 /* ViewController.swift in Sources */,
+				FA5977EB255C35AA00665630 /* SelectAddressMapViewController.swift in Sources */,
 				FAACAAA0254B0C13005C3084 /* PromotionDetailsViewModel.swift in Sources */,
 				FA6100AC255715C700ED0CD5 /* PaymentType.swift in Sources */,
 				72A1DBE02545B424005A047A /* LoginInteractor.swift in Sources */,
@@ -1005,6 +1083,8 @@
 				F7968F452561BCEE008B46EA /* CustomTextViewDelegate.swift in Sources */,
 				F77DE255254A192C001338D8 /* BaseCustomUIComponents.swift in Sources */,
 				F795DF3325547A50005A607C /* TariffPage.swift in Sources */,
+				FAB78CC425595ECE00A9A72F /* AddressesStrings.swift in Sources */,
+				FAB78CD02559768C00A9A72F /* DeliveryAddressView.swift in Sources */,
 				FA561B4C254F0D8E00BD549E /* SideMenuView.swift in Sources */,
 				72A1DBEF2545BFCD005A047A /* Language.swift in Sources */,
 				F7E692D7255DB66600D7C691 /* TaxiOrderView.swift in Sources */,
@@ -1032,6 +1112,7 @@
 				FAA9495A25546F9F005C5B40 /* PaymentCard.swift in Sources */,
 				72FBDC6325488F3F00727C12 /* MapStrings.swift in Sources */,
 				FAC0660D2555607C003CC6AA /* BindCardViewController.swift in Sources */,
+				FA5977E8255C2D1B00665630 /* SelectAddressView.swift in Sources */,
 				FA44F2AF25459B080004A1C9 /* SettingsLanguageViewController.swift in Sources */,
 				FA43AE942544981E00766652 /* SettingsViewModel.swift in Sources */,
 				FAA0B6C925496D1D0020ACE7 /* SettingsViewController.swift in Sources */,
@@ -1043,6 +1124,7 @@
 				FA44F2B225459B1F0004A1C9 /* SettingsLanguageViewModel.swift in Sources */,
 				FA43AE902544937D00766652 /* TableHelper.swift in Sources */,
 				FAE81CA7254815E40082A6B5 /* ServerApi.swift in Sources */,
+				FAB7F571255E717C000AE131 /* AddressTableViewCell.swift in Sources */,
 				FA8CA7722546C873001FDE5E /* SettingsPersonalDataViewController.swift in Sources */,
 				F73BC4F4254ECE0A0018FC0A /* RequestModel.swift in Sources */,
 				FA8CA7792546D0F8001FDE5E /* AlertButton.swift in Sources */,
