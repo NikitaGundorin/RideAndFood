@@ -16,3 +16,5 @@ let tariffPath = "/user/\(UserConfig.shared.userId)/tariff"
 let addressPath = "/user/\(UserConfig.shared.userId)/address"
 let paymentCardPath = "/user/\(UserConfig.shared.userId)/payment-card/\(UserConfig.shared.paymentCardId)"
 let orderFoodPath = "/user/\(UserConfig.shared.userId)/order/food"
+
+let substitutionCardId = 138 // костыль, когда карточка не задана, использовать этот id карты для пост-запроса к серверу, поскольку иначе он не приниает запрос.
