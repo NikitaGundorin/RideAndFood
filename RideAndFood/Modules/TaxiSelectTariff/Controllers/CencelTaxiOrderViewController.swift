@@ -12,6 +12,8 @@ class CencelTaxiOrderViewController: UIViewController {
     
     var dismissCallback: (() -> ())?
     
+    var problemButtonPressedCallback: (() -> ())?
+    
     private let padding: CGFloat = 20
     
     private let backgroundImageView: UIImageView = {
@@ -51,7 +53,7 @@ class CencelTaxiOrderViewController: UIViewController {
     
     private lazy var problemButton: PrimaryButton = {
         let button = PrimaryButton(title: SelectTariffStrings.problem.text())
-        //        button.addTarget(self, action: #selector(otherQuantityButtonPressed), for: .touchUpInside)
+        button.addTarget(self, action: #selector(problemButtonPressed), for: .touchUpInside)
         button.setTitleColor(.black, for: .normal)
         button.backgroundColor = .white
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -108,6 +110,11 @@ class CencelTaxiOrderViewController: UIViewController {
         let vc = AnotherTaxiOrderViewController()
         vc.dismissCallback = dismissCallback
         navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @objc private func problemButtonPressed() {
+        dismissSelf()
+        problemButtonPressedCallback?()
     }
     
     @objc private func dismissSelf() {

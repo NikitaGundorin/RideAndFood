@@ -11,6 +11,9 @@ import UIKit
 class OtherQuantityPointsView: UIView, CustromViewProtocol {
     
     var maxPoints: Int?
+    var enteredPoints: Int {
+        Int(pointsTextField.text ?? "0") ?? 0
+    }
     var dismissCallback: ((Int?) -> ())?
     
     private lazy var contentView: UIView = {
@@ -27,7 +30,9 @@ class OtherQuantityPointsView: UIView, CustromViewProtocol {
     
     private lazy var pointsTextField: MaskTextField = {
         let textField = MaskTextField(format: "[0…]", valueChangedCallback: { [weak self] isCompleted in
-            if isCompleted { self?.confirmButton.isEnabled = true }
+            guard let self = self else { return }
+            self.confirmButton.isEnabled = isCompleted
+                && self.enteredPoints <= self.maxPoints ?? 0
         })
         textField.placeholder = SelectTariffStrings.pointsCountTitle.text()
         textField.translatesAutoresizingMaskIntoConstraints = false
@@ -148,12 +153,11 @@ class OtherQuantityPointsView: UIView, CustromViewProtocol {
     }
     
     @objc private func confirmButtonPressed() {
-        if let points = Int(pointsTextField.text ?? "0"),
-           let maxPoints = maxPoints,
-           points <= maxPoints {
+        if let maxPoints = maxPoints,
+           enteredPoints <= maxPoints {
             
             dismiss { [weak self] in
-                self?.dismissCallback?(points)
+                self?.dismissCallback?(self?.enteredPoints)
                 self?.removeFromSuperview()
             }
         }
