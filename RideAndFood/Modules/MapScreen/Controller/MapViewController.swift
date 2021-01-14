@@ -1166,6 +1166,10 @@ extension MapViewController: SelectTariffViewDelegate {
                 self?.menuButton.isHidden = false
             }
             
+            vc.problemButtonPressedCallback = { [weak self] in
+                self?.reportProblemButtonTapped()
+            }
+            
             let nc = UINavigationController(rootViewController: vc)
             nc.modalTransitionStyle = .crossDissolve
             nc.modalPresentationStyle = .fullScreen

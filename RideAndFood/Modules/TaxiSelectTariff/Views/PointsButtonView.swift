@@ -25,6 +25,7 @@ class PointsButtonView: UIView {
         salelabel.textColor = UIColor(red: 0.204, green: 0.78, blue: 0.349, alpha: 1)
         salelabel.translatesAutoresizingMaskIntoConstraints = false
         salelabel.font = .boldSystemFont(ofSize: 15)
+        salelabel.setContentHuggingPriority(.required, for: .horizontal)
         return salelabel
     }()
     
@@ -69,7 +70,7 @@ class PointsButtonView: UIView {
             iconImageView.widthAnchor.constraint(equalToConstant: 20),
             
             titleLabelLeadingAnchorConstraint,
-            titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: padding),
+            titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -padding),
             titleLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
             
             saleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding),
