@@ -166,6 +166,7 @@ class TaxiArrivingView: UIView {
                 self?.updateTitle()
             }
         })
+        RunLoop.current.add(timer!, forMode: .common)
     }
     
     private func updateTitle() {

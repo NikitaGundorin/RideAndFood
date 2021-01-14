@@ -151,8 +151,7 @@ class MapViewController: UIViewController {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
-    
-    private lazy var taxiArrivingView = TaxiArrivingView()
+
     private lazy var taxiTripInfoView = TaxiTripInfoView()
     private lazy var taxiTripFinishedView = TaxiTripFinishedView()
     
@@ -279,6 +278,8 @@ class MapViewController: UIViewController {
                     swipeGesture.direction = .up
                     cardView.addGestureRecognizer(swipeGesture)
                 } else {
+                    menuButton.isHidden = false
+                    personButton.isHidden = false
                     myLocationButton.isHidden = false
                     locationImageView.isHidden = false
                     activeOrderCounterView.isHidden = true
@@ -671,14 +672,16 @@ class MapViewController: UIViewController {
     private func showTaxiArrivingView() {
         state = .waitForTaxi
         guard let order = taxiOrderModelHandler.getTaxiOrder() else { return }
+        let taxiArrivingView = TaxiArrivingView()
         taxiArrivingView.configure(with: .init(carName: order.car, carColor: order.color))
         additionalCardView.configure(with: .init(contentView: taxiArrivingView,
                                                  paddingBottom: padding,
                                                  didSwipeDownCallback: { [weak self] in
                                                     self?.hideAdditionalCardView()
                                                     self?.state = .trip
+                                                    self?.cardView.isHidden = false
                                                     // Mock trip finish
-                                                    DispatchQueue.main.asyncAfter(deadline: .now() + .random(in: 5...10)) {
+                                                    DispatchQueue.main.asyncAfter(deadline: .now() + .random(in: 15...16)) {
                                                         self?.taxiOrderModelHandler.finishOrder()
                                                         self?.hideAdditionalCardView {
                                                             self?.showTripFinishedView()
@@ -742,6 +745,9 @@ class MapViewController: UIViewController {
                                                     self?.hideAdditionalCardView()
                                                  }))
         showAdditionalCardView()
+        taxiActiveOrderView.removeFromSuperview()
+        isTaxiActiveOrder = false
+        isActiveOrder = true
     }
     
     private func updateAnnotations() {
@@ -875,12 +881,6 @@ class MapViewController: UIViewController {
         
         directions.calculate { (response, error) -> Void in
             guard let response = response else {
-                if error != nil {
-                    AlertHelper().alert(self, title: StringsHelper.alertErrorTitle.text())
-                    self.state = .main
-                    self.selectTariffView.dismiss()
-                    self.hideAdditionalCardView()
-                }
                 return
             }
             
@@ -999,6 +999,11 @@ class MapViewController: UIViewController {
         }
         
         if let deletes = userInfo[NSDeletedObjectsKey] as? Set<NSManagedObject>, deletes.count > 0 {
+            if OrderTaxiModelHandler.shared.getTaxiOrder() == nil {
+                DispatchQueue.main.async { [weak self] in
+                    self?.taxiActiveOrderView.removeFromSuperview()
+                }
+            }
             // Здесь нужно будет удалить вьюшки активных заказов и вернуть состояние стартового экрана.
         }
     }
@@ -1167,6 +1172,9 @@ extension MapViewController: SelectTariffViewDelegate {
             self?.present(nc, animated: true)
         }
         addNewView(view)
+        taxiActiveOrderView.removeFromSuperview()
+        isTaxiActiveOrder = false
+        isActiveOrder = true
     }
     
     func foundTaxi(order: TaxiOrder, tariff: TariffModel) {
