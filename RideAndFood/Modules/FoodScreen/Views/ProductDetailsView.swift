@@ -168,5 +168,17 @@ extension ProductDetailsView: IConfigurableView {
         let addToCart = ProductDetailsStrings.addToCard.text()
         addToCartButton.setTitles(left: addToCart, right: price)
         closeBlock = model.closeBlock
+        
+        counterView.changePrice = { [weak self] in
+            guard let self = self else { return }
+            
+            let price = (model.price * Float(self.counterView.count)).currencyString()
+            let addToCart = ProductDetailsStrings.addToCard.text()
+            self.addToCartButton.setTitles(left: addToCart, right: price)
+            
+            UIView.animate(withDuration: generalAnimationDuration) {
+                self.layoutIfNeeded()
+            }
+        }
     }
 }

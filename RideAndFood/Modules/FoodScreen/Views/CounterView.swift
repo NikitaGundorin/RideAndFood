@@ -41,6 +41,8 @@ class CounterView: UIView {
         return label
     }()
     
+    var changePrice: (() -> ())?
+    
     // MARK: - Public properties
     
     lazy var count = 1 {
@@ -104,9 +106,11 @@ class CounterView: UIView {
     
     @objc private func increase() {
         count += 1
+        changePrice?()
     }
     
     @objc private func decrease() {
         count -= 1
+        changePrice?()
     }
 }
