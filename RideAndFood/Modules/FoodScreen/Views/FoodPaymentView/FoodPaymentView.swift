@@ -212,7 +212,9 @@ class FoodPaymentView: CustomViewWithAnimation {
             products.append(Int(row.productId))
         }
         
-        let model = FoodOrderBodyModel(to: order!.to, payment_card: UserConfig.shared.paymentCardId, payment_method: "cash", promo_codes: [""], credit: 0, comment: FoodOrderBodyModel.Comment(banknote: changeCount), products: products)
+        let cardId = UserConfig.shared.paymentCardId != 0 ? UserConfig.shared.paymentCardId : substitutionCardId
+        
+        let model = FoodOrderBodyModel(to: order!.to, payment_card: cardId, payment_method: "cash", promo_codes: [""], credit: 0, comment: FoodOrderBodyModel.Comment(banknote: changeCount), products: products)
 
         let request = RequestModel(path: orderFoodPath, method: .post, body: model)
         let networker = Networker()
